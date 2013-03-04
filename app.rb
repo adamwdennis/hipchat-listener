@@ -69,37 +69,37 @@ helpers do
         muc.on_message do |time,speaker,message|
           call_workflow(username,token,workflow_id,event,{:time=>time,:speaker=>speaker,:message=>message})
         end
-        puts "Listeneing for messages"
+        puts "Listening for messages"
       when "Joined"
         puts "Starting to listen for joins"
         muc.on_join do |time,speaker|
           call_workflow(username,token,workflow_id,event,{:time=>time,:speaker=>speaker})
         end
-        puts "Listeneing for joins"
+        puts "Listening for joins"
       when "Leave"
         puts "Starting to listen for leaves"
         muc.on_leave do |time,speaker|
           call_workflow(username,token,workflow_id,event,{:time=>time,:speaker=>speaker})
         end
-        puts "Listeneing for leaves"
+        puts "Listening for leaves"
       when "PrivateMessageReceived"
         puts "Starting to listen for private messages"
         muc.on_private_message do |time,speaker,message|
           call_workflow(username,token,workflow_id,event,{:time=>time,:speaker=>speaker,:message=>message})
         end
-        puts "Listeneing for private messages"
+        puts "Listening for private messages"
       when "RoomMessageReceived"
         puts "Starting to listen for room messages"
         muc.on_room_message do |time,message|
           call_workflow(username,token,workflow_id,event,{:time=>time,:message=>message})
         end
-        puts "Listeneing for room messages"
+        puts "Listening for room messages"
       when "SubjectChange"
         puts "Starting to listen for subject changes"
         muc.on_subject do |time,speaker,subject|
           call_workflow(username,token,workflow_id,event,{:time=>time,:speaker=>speaker,:subject=>subject})
         end
-        puts "Listeneing for subject changes"
+        puts "Listening for subject changes"
       end
       
       
